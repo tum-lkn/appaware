@@ -1,0 +1,53 @@
+{
+    "capacity": 18000,
+    "flows": {
+        "0": {
+            "a_idx": 0,
+            "model": "model_webdl"
+        },
+        "1": {
+            "a_idx": 1,
+            "model": "model_webdl"
+        },
+        "2": {
+            "a_idx": 0,
+            "model": "model_webdl"
+        },
+        "3": {
+            "a_idx": 1,
+            "model": "model_webdl"
+        },
+        "4": {
+            "a_idx": 0,
+            "model": "model_webdl"
+        },
+        "5": {
+            "a_idx": 1,
+            "model": "model_webdl"
+        },
+        "6": {
+            "a_idx": 0,
+            "model": "model_webdl"
+        },
+        "7": {
+            "a_idx": 1,
+            "model": "model_webdl"
+        },
+        "8": {
+            "a_idx": 0,
+            "model": "model_webdl"
+        },
+        "9": {
+            "a_idx": 1,
+            "model": "model_webdl"
+        },
+        "10": {
+            "a_idx": 0,
+            "model": "model_webdl"
+        },
+        "11": {
+            "a_idx": 1,
+            "model": "model_webdl"
+        }
+    }
+}

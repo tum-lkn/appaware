@@ -1,0 +1,21 @@
+{
+    "capacity": 15000,
+    "flows": {
+        "0": {
+            "a_idx": 0,
+            "model": "model_ssh"
+        },
+        "1": {
+            "a_idx": 1,
+            "model": "model_ssh"
+        },
+        "2": {
+            "a_idx": 1,
+            "model": "model_ssh"
+        },
+        "3": {
+            "a_idx": 1,
+            "model": "model_ssh"
+        }
+    }
+}

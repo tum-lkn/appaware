@@ -1,0 +1,6 @@
+*.png
+.spyproject
+__pycache__
+.Rhistory
+.~*
+*.pdf

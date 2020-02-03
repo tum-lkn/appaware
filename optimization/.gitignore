@@ -1,0 +1,6 @@
+.idea
+.spyproject
+__pycache__
+gurobi.log
+runs/
+runs_searches/

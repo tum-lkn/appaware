@@ -1,0 +1,24 @@
+__pycache__
+*.pyc
+*.log
+.vagrant/
+.idea/
+*.debug_log
+*.app_controller_log
+*.metric_log
+/clients/DASHClient/Tapas/logs/
+
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+#statistc output
+*.cvs
+*.txt
+*.swp

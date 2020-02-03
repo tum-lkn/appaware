@@ -1,0 +1,244 @@
+{
+    "daemons": {
+        "pc1_host0": {
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.0"
+                        ]
+                    }
+                }
+            },
+            "tcpdump": {
+                "truncate": 200
+            }
+        },
+        "pc1_host1": {
+            "client_applications": [
+                {
+                    "application": "SSHClient",
+                    "config": {
+                        "cmd_pool": [
+                            "date"
+                        ],
+                        "ssh_args": {
+                            "hostname": "192.168.5.1",
+                            "password": "vagrant",
+                            "port": 22,
+                            "username": "vagrant"
+                        }
+                    },
+                    "intent": "model_ssh",
+                    "srv_host": "pc5_host1",
+                    "srv_ip": "192.168.5.1"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.1"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc5_host0": {
+            "daemon_settings": {}
+        },
+        "pc5_host1": {
+            "server_applications": [
+                {
+                    "application": "SSHServer",
+                    "client_host": "pc1_host1",
+                    "client_ip": "192.168.1.1",
+                    "config": {
+                        "port": 22
+                    }
+                }
+            ]
+        }
+    },
+    "experiment": {
+        "capacity": 100000,
+        "collect_logs": {
+            "delete": true,
+            "remote_path": "logs/parser",
+            "ssh_args": {
+                "hostname": "10.0.5.0",
+                "password": "lkn2017",
+                "username": "appaware"
+            },
+            "timestamp": 1522090871.0371873
+        },
+        "comment": "",
+        "duration": 120,
+        "repetition": 0,
+        "study_id": "1234"
+    },
+    "global_settings": {
+        "applications": {
+            "app_controller": "0.0.0.0",
+            "app_controller_log": "./",
+            "app_controller_port": 8080,
+            "metric_log": "./",
+            "random_wait_time": 50,
+            "request_interval": 0.1,
+            "request_mode": "constant"
+        },
+        "logging": {
+            "data_network": "192.168.0.0/21",
+            "interface_stats": {
+                "interval": 1
+            },
+            "rtt": {
+                "host_list": [],
+                "interval": 0.1,
+                "nice": -10
+            },
+            "tcpdump": null
+        },
+        "max_daemons": 2
+    },
+    "template": {
+        "client_configs_tmpl": {
+            "DASHClient": {
+                "buffer_size": 60,
+                "controller": "conventional",
+                "live": false,
+                "url": "http://$SERVER_IP$/bbb/bbb_SDNAPPAWARE.m3u8"
+            },
+            "DASHLiveClient": {
+                "buffer_size": 10,
+                "controller": "conventional",
+                "live": true,
+                "url": "http://$SERVER_IP$/bbb_1s/bbb_SDNAPPAWARE.m3u8"
+            },
+            "SSHClient": {
+                "cmd_pool": [
+                    "date"
+                ],
+                "ssh_args": {
+                    "hostname": "$SERVER_IP$",
+                    "password": "vagrant",
+                    "port": 22,
+                    "username": "vagrant"
+                }
+            },
+            "VoIPClient": {},
+            "WebClient": {
+                "url_pool": [
+                    "http://$SERVER_IP$/"
+                ]
+            },
+            "WebDLClient": {
+                "url_pool": [
+                    "http://$SERVER_IP$/10M.bin"
+                ]
+            }
+        },
+        "experiment": {
+            "capacity": 100000,
+            "collect_logs": {
+                "delete": true,
+                "remote_path": "logs/parser",
+                "ssh_args": {
+                    "hostname": "10.0.5.0",
+                    "password": "lkn2017",
+                    "username": "appaware"
+                },
+                "timestamp": 1522090871.0371873
+            },
+            "comment": "",
+            "duration": 120,
+            "repetition": 0,
+            "study_id": "1234"
+        },
+        "global_settings": {
+            "applications": {
+                "app_controller": "0.0.0.0",
+                "app_controller_log": "./",
+                "app_controller_port": 8080,
+                "metric_log": "./",
+                "random_wait_time": 50,
+                "request_interval": 0.1,
+                "request_mode": "constant"
+            },
+            "logging": {
+                "data_network": "192.168.0.0/21",
+                "interface_stats": {
+                    "interval": 1
+                },
+                "rtt": {
+                    "host_list": [],
+                    "interval": 0.1,
+                    "nice": -10
+                },
+                "tcpdump": null
+            },
+            "max_daemons": 2
+        },
+        "scenario": {
+            "DASHClient": 0,
+            "SSHClient": 1,
+            "VoIPClient": 0,
+            "WebClient": 0,
+            "WebDLClient": 0
+        },
+        "servers_config_tmpl": {
+            "SSHServer": {
+                "port": 22
+            },
+            "VoIPServer": {
+                "call_duration": 5,
+                "client_ip": "$CLIENT_IP$",
+                "codec": "G.729.2"
+            },
+            "WebServerDASH": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            },
+            "WebServerWeb": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/science_lab",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            },
+            "WebServerWebDL": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            }
+        },
+        "setup": {
+            "clients": [
+                1
+            ],
+            "servers": [
+                5
+            ]
+        }
+    }
+}

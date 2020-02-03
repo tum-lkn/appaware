@@ -1,0 +1,37 @@
+{
+  "categories": {
+    "images": [
+      {
+        "tag": "img",
+        "attribute": "src"
+      }
+    ],
+    "scripts": [
+      {
+        "tag": "script",
+        "attribute": "src"
+      }
+    ],
+    "styles": [
+      {
+        "tag": "link",
+        "attribute": "href"
+      }
+    ]
+  },
+  "servers": [
+    {
+      "url": "http://static.server:8080/",
+      "categories": [
+        "scripts",
+        "styles"
+      ]
+    },
+    {
+      "url": "http://img.server/",
+      "categories": [
+        "images"
+      ]
+    }
+  ]
+}

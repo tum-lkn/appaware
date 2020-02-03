@@ -1,0 +1,255 @@
+{
+    "daemons": {
+        "pc1_host0": {
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": []
+                    }
+                }
+            }
+        },
+        "pc1_host1": {
+            "client_applications": [
+                {
+                    "application": "WebDLClient",
+                    "config": {
+                        "request_interval": 10,
+                        "url_pool": [
+                            "http://80.249.99.148/10MB.zip"
+                        ],
+                        "use_request_interval": true
+                    }
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": []
+                    }
+                }
+            }
+        }
+    },
+    "experiment": {
+        "capacity": 100000,
+        "collect_logs": {
+            "delete": true,
+            "remote_path": "logs/parser",
+            "ssh_args": {
+                "hostname": "10.0.8.0",
+                "password": "vagrant",
+                "username": "vagrant"
+            },
+            "timestamp": 1522090871.0371873
+        },
+        "comment": "Daemon test, only PC1 required.",
+        "duration": 120,
+        "study_id": "daemon_test"
+    },
+    "global_settings": {
+        "applications": {
+            "app_controller": "0.0.0.0",
+            "app_controller_log": "./",
+            "app_controller_port": 8080,
+            "metric_log": "./"
+        },
+        "logging": {
+            "data_network": "192.168.0.0/21",
+            "interface_stats": {
+                "interval": 1
+            },
+            "rtt": {
+                "host_list": [],
+                "interval": 0.1,
+                "nice": -10
+            },
+            "tcpdump": {
+                "truncate": 200
+            }
+        },
+        "max_daemons": 3
+    },
+    "template": {
+        "client_configs_tmpl": {
+            "DASHClient": {},
+            "SSHClient": {
+                "cmd_pool": [
+                    "date"
+                ],
+                "request_interval": 0.1,
+                "ssh_args": {
+                    "hostname": "$SERVER_IP$",
+                    "password": "vagrant",
+                    "port": 22,
+                    "username": "vagrant"
+                },
+                "use_request_interval": true
+            },
+            "VoIPClient": {},
+            "WebClient": {
+                "request_interval": 0.1,
+                "url_pool": [
+                    "http://$SERVER_IP$/"
+                ],
+                "use_request_interval": true
+            },
+            "WebDLClient": {
+                "request_interval": 0.5,
+                "url_pool": [
+                    "http://$SERVER_IP$/10M.bin"
+                ],
+                "use_request_interval": true
+            }
+        },
+        "experiment": {
+            "capacity": 100000,
+            "collect_logs": {
+                "delete": true,
+                "remote_path": "logs/parser",
+                "ssh_args": {
+                    "hostname": "10.0.8.0",
+                    "password": "vagrant",
+                    "username": "vagrant"
+                },
+                "timestamp": 1522090871.0371873
+            },
+            "comment": "8 dl clients; 8 ssh clients; 8 web clients; 100M bottleneck; 95% delay model",
+            "duration": 120,
+            "study_id": "8_dl_8_ssh_8_web_100M_dump_paced_95"
+        },
+        "global_settings": {
+            "applications": {
+                "app_controller": "0.0.0.0",
+                "app_controller_log": "./",
+                "app_controller_port": 8080,
+                "metric_log": "./"
+            },
+            "logging": {
+                "data_network": "192.168.0.0/21",
+                "interface_stats": {
+                    "interval": 1
+                },
+                "rtt": {
+                    "host_list": [],
+                    "interval": 0.1,
+                    "nice": -10
+                },
+                "tcpdump": {
+                    "truncate": 200
+                }
+            },
+            "max_daemons": 3
+        },
+        "scenario": {
+            "DASHClient": 0,
+            "SSHClient": 1,
+            "VoIPClient": 0,
+            "WebClient": 0,
+            "WebDLClient": 1
+        },
+        "servers_config_tmpl": {
+            "SSHServer": {
+                "port": 22
+            },
+            "VoIPServer": {
+                "client_ip": "$CLIENT_IP$",
+                "request_interval": 0.5,
+                "use_request_interval": true
+            },
+            "WebServerDASH": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            },
+            "WebServerWeb": {
+                "convert": {
+                    "categories": {
+                        "images": [
+                            {
+                                "attribute": "src",
+                                "tag": "img"
+                            }
+                        ],
+                        "scripts": [
+                            {
+                                "attribute": "src",
+                                "tag": "script"
+                            }
+                        ],
+                        "styles": [
+                            {
+                                "attribute": "href",
+                                "tag": "link"
+                            }
+                        ]
+                    },
+                    "servers": [
+                        {
+                            "categories": [
+                                "scripts",
+                                "styles"
+                            ],
+                            "url": "http://$SERVER_IP$:81/"
+                        },
+                        {
+                            "categories": [
+                                "images"
+                            ],
+                            "url": "http://$SERVER_IP$:82/"
+                        }
+                    ]
+                },
+                "servers": [
+                    {
+                        "document_root": "/var/www/science_lab",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    },
+                    {
+                        "document_root": "/var/www/science_lab",
+                        "port": 81,
+                        "ssl": false,
+                        "websocket": null
+                    },
+                    {
+                        "document_root": "/var/www/science_lab",
+                        "port": 82,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            },
+            "WebServerWebDL": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            }
+        },
+        "setup": {
+            "clients": [
+                1
+            ],
+            "servers": [
+                2,
+                5
+            ]
+        }
+    }
+}

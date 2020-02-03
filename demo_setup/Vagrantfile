@@ -1,0 +1,144 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "bento/ubuntu-16.04"
+  # config.vm.box = "debian/contrib-stretch64"
+  # config.vm.box = "ubuntu/artful64"
+
+  config.vm.define "mgnt", primary: true do |cfg|
+
+    cfg.vm.network "private_network", ip: "10.0.8.0", netmask: "255.255.240.0"
+
+    cfg.vm.hostname = "mgnt"
+
+    cfg.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 1
+      v.customize ['modifyvm', :id, '--natnet1', '172.18.52/24']
+    end
+
+    cfg.vm.provision :shell, path: "vagrant/mgnt/provision.sh"
+    cfg.vm.provision :shell, path: "vagrant/mgnt/provision_user.sh", privileged: false
+    cfg.vm.provision :shell, path: "vagrant/mgnt/startup.sh", run: "always"
+  end
+
+  config.vm.define "switch" do |switch|
+
+    switch.vm.network "private_network", ip: "10.0.7.0", netmask: "255.255.240.0"
+    switch.vm.network "private_network", ip: "192.168.3.100", netmask: "255.255.252.0"
+    switch.vm.network "private_network", ip: "192.168.4.100", netmask: "255.255.252.0"
+
+    switch.vm.hostname = "switch"
+
+    switch.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+      v.cpus = 2
+      v.customize ['modifyvm', :id, '--natnet1', '172.18.52/24',
+                   "--nicpromisc2", "allow-all", # Support for multiple MACs per VM (e.g. via network namespaces)
+                  ]
+    end
+
+    switch.vm.provision :shell, path: "vagrant/switch/provision.sh"
+    switch.vm.provision :shell, path: "vagrant/switch/startup.sh", run: "always"
+  end
+
+
+  config.vm.define "pc1", primary: true do |pc1|
+    pc1.vm.network "private_network", ip: "10.0.1.0", netmask: "255.255.240.0"
+    pc1.vm.network "private_network", ip: "192.168.1.0", netmask: "255.255.252.0"
+
+    pc1.vm.hostname = "pc1"
+
+    pc1.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.customize [
+        "modifyvm", :id,
+	    "--nicpromisc2", "allow-all", # Support for multiple MACs per VM (e.g. via network namespaces)
+	    "--nicpromisc3", "allow-all",
+      ]
+      v.customize ['modifyvm', :id, '--natnet1', '172.18.52/24']
+    end
+    pc1.vm.provision :shell, path: "vagrant/kernel_update.sh", run: "always"
+    pc1.vm.provision :shell, path: "vagrant/pcs/provision.sh", run: "always"
+    pc1.vm.provision :shell, path: "vagrant/pcs/startup.sh", run: "always"
+    pc1.vm.provision :shell, path: "vagrant/pcs/netspaces.sh", run: "always"
+    pc1.vm.provision :shell, path: "vagrant/pcs/pc1.sh", run: "always"
+  end
+
+  # config.vm.define "pc2", primary: true do |pc2|
+
+  #   pc2.vm.network "private_network", ip: "10.0.2.0", netmask: "255.255.240.0"
+  #   pc2.vm.network "private_network", ip: "192.168.1.0", netmask: "255.255.252.0"
+
+  #   pc2.vm.hostname = "pc2"
+
+   #  pc2.vm.provider "virtualbox" do |v|
+   #    v.memory = 2048
+   #    v.cpus = 2
+   #    v.customize [
+   #      "modifyvm", :id,
+	#     "--nicpromisc2", "allow-all", # Support for multiple MACs per VM (e.g. via network namespaces)
+	#     "--nicpromisc3", "allow-all",
+    #   ]
+    #   v.customize ['modifyvm', :id, '--natnet1', '172.18.52/24']
+    # end
+
+    # pc2.vm.provision :shell, path: "vagrant/kernel_update.sh", run: "always"
+    # pc2.vm.provision :shell, path: "vagrant/pcs/provision.sh", run: "always"
+    # pc2.vm.provision :shell, path: "vagrant/pcs/startup.sh", run: "always"
+    # pc2.vm.provision :shell, path: "vagrant/pcs/netspaces.sh", run: "always"
+  # end
+
+  config.vm.define "pc5", primary: true do |pc5|
+
+    pc5.vm.network "private_network", ip: "10.0.5.0", netmask: "255.255.240.0"
+    pc5.vm.network "private_network", ip: "192.168.5.0", netmask: "255.255.252.0"
+
+    pc5.vm.hostname = "pc5"
+
+    pc5.vm.provider "virtualbox" do |v|
+      v.memory = 2048
+      v.cpus = 2
+      v.customize [
+        "modifyvm", :id,
+	    "--nicpromisc2", "allow-all", # Support for multiple MACs per VM (e.g. via network namespaces)
+	    "--nicpromisc3", "allow-all",
+      ]
+      v.customize ['modifyvm', :id, '--natnet1', '172.18.55/24']
+    end
+
+    pc5.vm.provision :shell, path: "vagrant/kernel_update.sh", run: "always"
+    pc5.vm.provision :shell, path: "vagrant/pcs/provision.sh", run: "always"
+    pc5.vm.provision :shell, path: "vagrant/pcs/startup.sh", run: "always"
+    pc5.vm.provision :shell, path: "vagrant/pcs/netspaces.sh", run: "always"
+    pc5.vm.provision :shell, path: "vagrant/pcs/pc5.sh", run: "always"
+  end
+
+#   config.vm.define "pc6", primary: true do |pc6|
+#
+#     pc6.vm.network "private_network", ip: "10.0.5.0", netmask: "255.255.240.0"
+#     pc6.vm.network "private_network", ip: "192.168.5.0", netmask: "255.255.252.0"
+#
+#     pc6.vm.hostname = "pc6"
+#
+#     pc6.vm.provider "virtualbox" do |v|
+#       v.memory = 2048
+#       v.cpus = 2
+#       v.customize [
+#         "modifyvm", :id,
+# 	    "--nicpromisc2", "allow-all", # Support for multiple MACs per VM (e.g. via network namespaces)
+# 	    "--nicpromisc3", "allow-all",
+#       ]
+#       v.customize ['modifyvm', :id, '--natnet1', '172.18.56/24']
+#     end
+#
+#     pc6.vm.provision :shell, path: "vagrant/kernel_update.sh", run: "always"
+#     pc6.vm.provision :shell, path: "vagrant/pcs/provision.sh", run: "always"
+#     pc6.vm.provision :shell, path: "vagrant/pcs/startup.sh", run: "always"
+#     pc6.vm.provision :shell, path: "vagrant/pcs/netspaces.sh", run: "always"
+#   end
+
+end

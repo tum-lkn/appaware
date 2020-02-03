@@ -1,0 +1,1045 @@
+{
+    "daemons": {
+        "pc1_host0": {
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.0"
+                        ]
+                    }
+                }
+            },
+            "tcpdump": {
+                "truncate": 200
+            }
+        },
+        "pc1_host1": {
+            "client_applications": [
+                {
+                    "application": "WebDLClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.1/10M.bin"
+                        ]
+                    },
+                    "intent": "model_webdl",
+                    "srv_host": "pc5_host1",
+                    "srv_ip": "192.168.5.1"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.1"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host10": {
+            "client_applications": [
+                {
+                    "application": "DASHClient",
+                    "config": {
+                        "buffer_size": 60,
+                        "controller": "conventional",
+                        "live": false,
+                        "url": "http://192.168.5.10/bbb/bbb_SDNAPPAWARE.m3u8"
+                    },
+                    "intent": "model_video",
+                    "srv_host": "pc5_host10",
+                    "srv_ip": "192.168.5.10"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.10"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host11": {
+            "client_applications": [
+                {
+                    "application": "DASHClient",
+                    "config": {
+                        "buffer_size": 10,
+                        "controller": "conventional",
+                        "live": true,
+                        "url": "http://192.168.5.11/bbb_1s/bbb_SDNAPPAWARE.m3u8"
+                    },
+                    "intent": "model_video_live",
+                    "srv_host": "pc5_host11",
+                    "srv_ip": "192.168.5.11"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.11"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host12": {
+            "client_applications": [
+                {
+                    "application": "DASHClient",
+                    "config": {
+                        "buffer_size": 60,
+                        "controller": "conventional",
+                        "live": false,
+                        "url": "http://192.168.5.12/bbb/bbb_SDNAPPAWARE.m3u8"
+                    },
+                    "intent": "model_video",
+                    "srv_host": "pc5_host12",
+                    "srv_ip": "192.168.5.12"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.12"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host13": {
+            "client_applications": [
+                {
+                    "application": "SSHClient",
+                    "config": {
+                        "cmd_pool": [
+                            "date"
+                        ],
+                        "ssh_args": {
+                            "hostname": "192.168.5.13",
+                            "password": "vagrant",
+                            "port": 22,
+                            "username": "vagrant"
+                        }
+                    },
+                    "intent": "model_ssh",
+                    "srv_host": "pc5_host13",
+                    "srv_ip": "192.168.5.13"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.13"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host14": {
+            "client_applications": [
+                {
+                    "application": "SSHClient",
+                    "config": {
+                        "cmd_pool": [
+                            "date"
+                        ],
+                        "ssh_args": {
+                            "hostname": "192.168.5.14",
+                            "password": "vagrant",
+                            "port": 22,
+                            "username": "vagrant"
+                        }
+                    },
+                    "intent": "model_ssh",
+                    "srv_host": "pc5_host14",
+                    "srv_ip": "192.168.5.14"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.14"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host15": {
+            "client_applications": [
+                {
+                    "application": "SSHClient",
+                    "config": {
+                        "cmd_pool": [
+                            "date"
+                        ],
+                        "ssh_args": {
+                            "hostname": "192.168.5.15",
+                            "password": "vagrant",
+                            "port": 22,
+                            "username": "vagrant"
+                        }
+                    },
+                    "intent": "model_ssh",
+                    "srv_host": "pc5_host15",
+                    "srv_ip": "192.168.5.15"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.15"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host16": {
+            "client_applications": [
+                {
+                    "application": "SSHClient",
+                    "config": {
+                        "cmd_pool": [
+                            "date"
+                        ],
+                        "ssh_args": {
+                            "hostname": "192.168.5.16",
+                            "password": "vagrant",
+                            "port": 22,
+                            "username": "vagrant"
+                        }
+                    },
+                    "intent": "model_ssh",
+                    "srv_host": "pc5_host16",
+                    "srv_ip": "192.168.5.16"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.16"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host17": {
+            "client_applications": [
+                {
+                    "application": "VoIPClient",
+                    "config": {},
+                    "intent": "model_voip",
+                    "srv_host": "pc5_host17",
+                    "srv_ip": "192.168.5.17"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.17"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host18": {
+            "client_applications": [
+                {
+                    "application": "VoIPClient",
+                    "config": {},
+                    "intent": "model_voip",
+                    "srv_host": "pc5_host18",
+                    "srv_ip": "192.168.5.18"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.18"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host19": {
+            "client_applications": [
+                {
+                    "application": "VoIPClient",
+                    "config": {},
+                    "intent": "model_voip",
+                    "srv_host": "pc5_host19",
+                    "srv_ip": "192.168.5.19"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.19"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host2": {
+            "client_applications": [
+                {
+                    "application": "WebDLClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.2/10M.bin"
+                        ]
+                    },
+                    "intent": "model_webdl",
+                    "srv_host": "pc5_host2",
+                    "srv_ip": "192.168.5.2"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.2"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host20": {
+            "client_applications": [
+                {
+                    "application": "VoIPClient",
+                    "config": {},
+                    "intent": "model_voip",
+                    "srv_host": "pc5_host20",
+                    "srv_ip": "192.168.5.20"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.20"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host3": {
+            "client_applications": [
+                {
+                    "application": "WebDLClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.3/10M.bin"
+                        ]
+                    },
+                    "intent": "model_webdl",
+                    "srv_host": "pc5_host3",
+                    "srv_ip": "192.168.5.3"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.3"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host4": {
+            "client_applications": [
+                {
+                    "application": "WebDLClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.4/10M.bin"
+                        ]
+                    },
+                    "intent": "model_webdl",
+                    "srv_host": "pc5_host4",
+                    "srv_ip": "192.168.5.4"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.4"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host5": {
+            "client_applications": [
+                {
+                    "application": "WebClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.5/"
+                        ]
+                    },
+                    "intent": "model_web",
+                    "srv_host": "pc5_host5",
+                    "srv_ip": "192.168.5.5"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.5"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host6": {
+            "client_applications": [
+                {
+                    "application": "WebClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.6/"
+                        ]
+                    },
+                    "intent": "model_web",
+                    "srv_host": "pc5_host6",
+                    "srv_ip": "192.168.5.6"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.6"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host7": {
+            "client_applications": [
+                {
+                    "application": "WebClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.7/"
+                        ]
+                    },
+                    "intent": "model_web",
+                    "srv_host": "pc5_host7",
+                    "srv_ip": "192.168.5.7"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.7"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host8": {
+            "client_applications": [
+                {
+                    "application": "WebClient",
+                    "config": {
+                        "url_pool": [
+                            "http://192.168.5.8/"
+                        ]
+                    },
+                    "intent": "model_web",
+                    "srv_host": "pc5_host8",
+                    "srv_ip": "192.168.5.8"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.8"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc1_host9": {
+            "client_applications": [
+                {
+                    "application": "DASHClient",
+                    "config": {
+                        "buffer_size": 10,
+                        "controller": "conventional",
+                        "live": true,
+                        "url": "http://192.168.5.9/bbb_1s/bbb_SDNAPPAWARE.m3u8"
+                    },
+                    "intent": "model_video_live",
+                    "srv_host": "pc5_host9",
+                    "srv_ip": "192.168.5.9"
+                }
+            ],
+            "daemon_settings": {
+                "logging": {
+                    "rtt": {
+                        "host_list": [
+                            "192.168.5.9"
+                        ]
+                    }
+                }
+            }
+        },
+        "pc5_host0": {
+            "daemon_settings": {}
+        },
+        "pc5_host1": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host1",
+                    "client_ip": "192.168.1.1",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host10": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host10",
+                    "client_ip": "192.168.1.10",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host11": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host11",
+                    "client_ip": "192.168.1.11",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host12": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host12",
+                    "client_ip": "192.168.1.12",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host13": {
+            "server_applications": [
+                {
+                    "application": "SSHServer",
+                    "client_host": "pc1_host13",
+                    "client_ip": "192.168.1.13",
+                    "config": {
+                        "port": 22
+                    }
+                }
+            ]
+        },
+        "pc5_host14": {
+            "server_applications": [
+                {
+                    "application": "SSHServer",
+                    "client_host": "pc1_host14",
+                    "client_ip": "192.168.1.14",
+                    "config": {
+                        "port": 22
+                    }
+                }
+            ]
+        },
+        "pc5_host15": {
+            "server_applications": [
+                {
+                    "application": "SSHServer",
+                    "client_host": "pc1_host15",
+                    "client_ip": "192.168.1.15",
+                    "config": {
+                        "port": 22
+                    }
+                }
+            ]
+        },
+        "pc5_host16": {
+            "server_applications": [
+                {
+                    "application": "SSHServer",
+                    "client_host": "pc1_host16",
+                    "client_ip": "192.168.1.16",
+                    "config": {
+                        "port": 22
+                    }
+                }
+            ]
+        },
+        "pc5_host17": {
+            "server_applications": [
+                {
+                    "application": "VoIPServer",
+                    "client_host": "pc1_host17",
+                    "client_ip": "192.168.1.17",
+                    "config": {
+                        "client_ip": "192.168.1.17",
+                        "codec": "G.729.2"
+                    }
+                }
+            ]
+        },
+        "pc5_host18": {
+            "server_applications": [
+                {
+                    "application": "VoIPServer",
+                    "client_host": "pc1_host18",
+                    "client_ip": "192.168.1.18",
+                    "config": {
+                        "client_ip": "192.168.1.18",
+                        "codec": "G.729.2"
+                    }
+                }
+            ]
+        },
+        "pc5_host19": {
+            "server_applications": [
+                {
+                    "application": "VoIPServer",
+                    "client_host": "pc1_host19",
+                    "client_ip": "192.168.1.19",
+                    "config": {
+                        "client_ip": "192.168.1.19",
+                        "codec": "G.729.2"
+                    }
+                }
+            ]
+        },
+        "pc5_host2": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host2",
+                    "client_ip": "192.168.1.2",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host20": {
+            "server_applications": [
+                {
+                    "application": "VoIPServer",
+                    "client_host": "pc1_host20",
+                    "client_ip": "192.168.1.20",
+                    "config": {
+                        "client_ip": "192.168.1.20",
+                        "codec": "G.729.2"
+                    }
+                }
+            ]
+        },
+        "pc5_host3": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host3",
+                    "client_ip": "192.168.1.3",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host4": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host4",
+                    "client_ip": "192.168.1.4",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host5": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host5",
+                    "client_ip": "192.168.1.5",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/science_lab",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host6": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host6",
+                    "client_ip": "192.168.1.6",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/science_lab",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host7": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host7",
+                    "client_ip": "192.168.1.7",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/science_lab",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host8": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host8",
+                    "client_ip": "192.168.1.8",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/science_lab",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        },
+        "pc5_host9": {
+            "server_applications": [
+                {
+                    "application": "WebServer",
+                    "client_host": "pc1_host9",
+                    "client_ip": "192.168.1.9",
+                    "config": {
+                        "convert": null,
+                        "servers": [
+                            {
+                                "document_root": "/var/www/",
+                                "port": 80,
+                                "ssl": false,
+                                "websocket": null
+                            }
+                        ],
+                        "websockets": []
+                    }
+                }
+            ]
+        }
+    },
+    "experiment": {
+        "capacity": 100000,
+        "collect_logs": {
+            "delete": true,
+            "remote_path": "logs/parser",
+            "ssh_args": {
+                "hostname": "10.0.5.0",
+                "password": "lkn2017",
+                "username": "appaware"
+            },
+            "timestamp": 1522090871.0371873
+        },
+        "comment": "",
+        "duration": 120,
+        "repetition": 0,
+        "study_id": "1234"
+    },
+    "global_settings": {
+        "applications": {
+            "app_controller": "0.0.0.0",
+            "app_controller_log": "./",
+            "app_controller_port": 8080,
+            "metric_log": "./",
+            "random_wait_time": 50,
+            "request_interval": 0.1,
+            "request_mode": "constant"
+        },
+        "logging": {
+            "data_network": "192.168.0.0/21",
+            "interface_stats": {
+                "interval": 1
+            },
+            "rtt": {
+                "host_list": [],
+                "interval": 0.1,
+                "nice": -10
+            },
+            "tcpdump": null
+        },
+        "max_daemons": 21
+    },
+    "template": {
+        "client_configs_tmpl": {
+            "DASHClient": {
+                "buffer_size": 60,
+                "controller": "conventional",
+                "live": false,
+                "url": "http://$SERVER_IP$/bbb/bbb_SDNAPPAWARE.m3u8"
+            },
+            "DASHLiveClient": {
+                "buffer_size": 10,
+                "controller": "conventional",
+                "live": true,
+                "url": "http://$SERVER_IP$/bbb_1s/bbb_SDNAPPAWARE.m3u8"
+            },
+            "SSHClient": {
+                "cmd_pool": [
+                    "date"
+                ],
+                "ssh_args": {
+                    "hostname": "$SERVER_IP$",
+                    "password": "vagrant",
+                    "port": 22,
+                    "username": "vagrant"
+                }
+            },
+            "VoIPClient": {},
+            "WebClient": {
+                "url_pool": [
+                    "http://$SERVER_IP$/"
+                ]
+            },
+            "WebDLClient": {
+                "url_pool": [
+                    "http://$SERVER_IP$/10M.bin"
+                ]
+            }
+        },
+        "experiment": {
+            "capacity": 100000,
+            "collect_logs": {
+                "delete": true,
+                "remote_path": "logs/parser",
+                "ssh_args": {
+                    "hostname": "10.0.5.0",
+                    "password": "lkn2017",
+                    "username": "appaware"
+                },
+                "timestamp": 1522090871.0371873
+            },
+            "comment": "",
+            "duration": 120,
+            "repetition": 0,
+            "study_id": "1234"
+        },
+        "global_settings": {
+            "applications": {
+                "app_controller": "0.0.0.0",
+                "app_controller_log": "./",
+                "app_controller_port": 8080,
+                "metric_log": "./",
+                "random_wait_time": 50,
+                "request_interval": 0.1,
+                "request_mode": "constant"
+            },
+            "logging": {
+                "data_network": "192.168.0.0/21",
+                "interface_stats": {
+                    "interval": 1
+                },
+                "rtt": {
+                    "host_list": [],
+                    "interval": 0.1,
+                    "nice": -10
+                },
+                "tcpdump": null
+            },
+            "max_daemons": 21
+        },
+        "scenario": {
+            "DASHClient": 4,
+            "SSHClient": 4,
+            "VoIPClient": 4,
+            "WebClient": 4,
+            "WebDLClient": 4
+        },
+        "servers_config_tmpl": {
+            "SSHServer": {
+                "port": 22
+            },
+            "VoIPServer": {
+                "client_ip": "$CLIENT_IP$",
+                "codec": "G.729.2"
+            },
+            "WebServerDASH": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            },
+            "WebServerWeb": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/science_lab",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            },
+            "WebServerWebDL": {
+                "convert": null,
+                "servers": [
+                    {
+                        "document_root": "/var/www/",
+                        "port": 80,
+                        "ssl": false,
+                        "websocket": null
+                    }
+                ],
+                "websockets": []
+            }
+        },
+        "setup": {
+            "clients": [
+                1
+            ],
+            "servers": [
+                5
+            ]
+        }
+    }
+}

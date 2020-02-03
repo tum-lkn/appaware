@@ -1,0 +1,7 @@
+{
+	"name":"influxdb",
+	"type":"influxdb",
+	"url":"http://10.0.8.0:8086",
+	"access":"direct",
+	"database": "appaware"
+}

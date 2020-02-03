@@ -1,0 +1,10 @@
+--- Makefile.orig	2018-02-20 14:47:39.176000000 +0000
++++ Makefile	2018-02-20 14:39:18.328000000 +0000
+@@ -63,6 +63,7 @@
+ TCMODULES += q_codel.o
+ TCMODULES += q_fq_codel.o
+ TCMODULES += q_fq.o
++TCMODULES += q_cfq.o
+ TCMODULES += q_pie.o
+ TCMODULES += q_hhf.o
+ TCMODULES += q_clsact.o

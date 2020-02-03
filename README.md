@@ -5,6 +5,7 @@ This repository contains the supplemental material to the paper *Scalable Applic
 | Name    | Link                           | Description                                            |
 |---------|--------------------------------|--------------------------------------------------------|
 | Clients | [README.md](clients/README.md) | Automated client applications used in the experiments. |
+| sch_cfq | [README.md](sch_cfq/README.md) | Customized version of the sch_fq Linux Kernel module.  |
 
 ## Acknowledgements
 

@@ -1,0 +1,24 @@
+{
+  "servers": [
+    {
+      "port": 80,
+      "document_root": "/var/www/",
+      "ssl": false,
+      "websocket": null
+    },
+    {
+      "port": 81,
+      "document_root": "/var/www/",
+      "ssl": false,
+      "websocket": null
+    },
+    {
+      "port": 82,
+      "document_root": "/var/www/",
+      "ssl": false,
+      "websocket": null
+    }
+  ],
+  "websockets": [],
+  "convert": null
+}

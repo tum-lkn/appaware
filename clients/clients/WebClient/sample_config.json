@@ -1,0 +1,11 @@
+{
+  "time_constant": 10,
+  "use_request_interval": false,
+  "request_interval": 10,
+  "time_is_pause": false,
+  "webdriver": "Firefox",
+  "url_pool": [
+    "https://google.de",
+    "https://www.lkn.ei.tum.de/startseite.html"
+  ]
+}

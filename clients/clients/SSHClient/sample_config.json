@@ -1,0 +1,17 @@
+{
+  "ssh_args": {
+    "hostname": "localhost",
+    "port": 22,
+    "username": "vagrant",
+    "password": "vagrant"
+  },
+  "time_constant": 5,
+  "use_request_interval": false,
+  "request_interval": 5,
+  "time_is_pause": false,
+  "cmd_pool": [
+    "ls -la",
+    "date",
+    "uptime"
+  ]
+}

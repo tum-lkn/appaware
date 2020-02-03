@@ -1,0 +1,7 @@
+{
+  "url": "http://server/bbb/bbbLQ.m3u8",
+  "buffer_size": 60,
+  "controller": "conventional",
+  "request_interval": 5,
+  "metric_log_interval": 1
+}

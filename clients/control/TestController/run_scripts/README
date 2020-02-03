@@ -1,0 +1,24 @@
+sudo reboot
+sudo insmod ~/sch_cfq/sched_cfq/sch_cfq.ko
+sudo ~/clients/control/utils/create_netns.sh 120
+
+# sometimes not all veth pairs get connected to bridge
+# both commands should show num_netns + 1
+brctl show | grep data  | wc -l
+brctl show | grep mgmt  | wc -l
+
+# another method is running nmap and see how many hosts respond
+nmap -nsP 192.168.0-5.0-80
+nmap -nsP 10.0.0-5.0-80
+
+
+# After setting up netns start daemons - run on PC5 because redis is running there!
+~/clients/control/TestController/run_scripts/restart_daemons.sh
+# check if all are responding (sometimes a second call is needed)
+~/clients/control/Daemon/DaemonCLI.py -r 127.0.0.1 list
+
+# run scenario - use tmux because screen gets killed!
+# single:
+~/clients/control/TestController/TestController.py -c <config>
+# folder:
+~/clients/control/TestController/run_scripts/run_folder.sh <folder>

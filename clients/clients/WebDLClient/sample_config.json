@@ -1,0 +1,10 @@
+{
+  "time_constant": 10,
+  "use_request_interval": false,
+  "request_interval": 10,
+  "time_is_pause": false,
+  "url_pool": [
+    "http://ipv4.download.thinkbroadband.com/5MB.zip",
+    "http://ipv4.download.thinkbroadband.com/10MB.zip"
+  ]
+}

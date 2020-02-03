@@ -1,0 +1,8 @@
+{
+                    "client_ip": "127.0.0.1",
+                    "use_request_interval": false,
+                    "time_constant": 2,
+                    "call_duration": 5,
+                    "request_interval": 5,
+		    "time_is_pause": true
+}

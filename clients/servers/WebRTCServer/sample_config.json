@@ -1,0 +1,22 @@
+{
+  "servers": [
+    {
+      "port": 443,
+      "document_root": "/clients/servers/WebRTCServer/www/",
+      "ssl": true,
+      "websocket": [
+        {
+          "location": "/ws/",
+          "proxy": "node"
+        }
+      ]
+    }
+  ],
+  "websockets": [
+    {
+      "name": "node",
+      "url": "localhost",
+      "port": 9090
+    }
+  ]
+}

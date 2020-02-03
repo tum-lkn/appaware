@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	
+	"name": "Cache Cleanup",
+	"description": "Clears cache before each website call",
+	"version": "1.0",
+	"author": "Tobias Eckl",
+
+	"icons": {
+		"48": "icons/broom.png"
+	},
+
+	"browser_action": {
+		"default_title": "Clear cache now",
+		"default_icon": "icons/broom.png"
+	},
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+	
+	"permissions": ["browsingData", "tabs", "webNavigation"]
+}

@@ -1,0 +1,69 @@
+{
+  "experiment": {
+    "study_id": "first_test",
+    "comment": "debug test config",
+    "duration": 30,
+    "collect_logs": {
+      "ssh_args": {
+        "hostname": "192.168.10.20",
+        "username": "vagrant",
+        "password": "vagrant"
+      },
+      "remote_path": "logs/",
+      "delete": true
+    }
+  },
+  "global_settings": {
+    "applications": {
+      "app_controller": "0.0.0.0",
+      "app_controller_port": 8080,
+      "app_controller_log": "./",
+      "metric_log": "./"
+    },
+    "logging": {
+      "data_network": "192.168.10.0/24",
+      "tcpdump": {
+        "truncate": null
+      },
+      "interface_stats": {
+        "interval": 1
+      },
+      "rtt": {
+        "host_list": [
+          "192.168.10.1",
+          "192.168.10.20",
+          "192.168.10.21"
+        ],
+        "interval": 1,
+        "nice": 0
+      }
+    }
+  },
+  "daemons": {
+    "test_daemon": {
+      "daemon_settings": {
+        "logging": {
+          "tcpdump": {
+            "truncate": 90
+          },
+          "interface_stats": {
+            "interval": 0.5
+          }
+        }
+      },
+      "client_applications": [
+        {
+          "application": "WebClient",
+          "config": {
+            "request_interval": 5,
+            "webdriver": "Firefox",
+            "url_pool": [
+              "http://192.168.10.1/science_lab/"
+            ]
+          }
+        }
+      ],
+      "server_applications": []
+    }
+  }
+}

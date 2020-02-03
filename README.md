@@ -2,10 +2,11 @@
 
 This repository contains the supplemental material to the paper *Scalable Application- and User-aware Resource Allocation in Enterprise Networks Using End-Host Pacing* published in the ACM Transactions on Modeling and Performance Evaluation of Computing Systems (ToMPECS).
 
-| Name    | Link                           | Description                                            |
-|---------|--------------------------------|--------------------------------------------------------|
-| Clients | [README.md](clients/README.md) | Automated client applications used in the experiments. |
-| sch_cfq | [README.md](sch_cfq/README.md) | Customized version of the sch_fq Linux Kernel module.  |
+| Name         | Link                                | Description                                                 |
+|--------------|-------------------------------------|-------------------------------------------------------------|
+| clients      | [README.md](clients/README.md)      | Automated client applications used in the experiments.      |
+| sch_cfq      | [README.md](sch_cfq/README.md)      | Customized version of the sch_fq Linux Kernel module.       |
+| optimization | [README.md](optimization/README.md) | Application-aware bandwidth allocation Gurobi MILP.         |
 
 ## Acknowledgements
 
